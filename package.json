@@ -1,9 +1,10 @@
 {
-  "name": "docker-webhook",
+  "name": "docker-webhook-to-slack",
   "version": "1.0.0",
   "description": "A docker webhook handler that posts to a slack channel.",
   "main": "src/server/app.js",
   "scripts": {
+    "start": "node $npm_package_main",
     "test": "exit 0"
   },
   "repository": {
@@ -16,5 +17,9 @@
     "slack"
   ],
   "author": "Nate Clark <nate.clark@ignitionone.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3",
+    "lodash": "^3.10.1"
+  }
 }
