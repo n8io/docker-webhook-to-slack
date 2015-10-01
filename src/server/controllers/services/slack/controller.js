@@ -66,8 +66,8 @@ function dockerWebhook(req, res) {
               short: true
             },
             {
-              title: 'Author',
-              value: req.body.push_data.pusher,
+              title: 'Tag',
+              value: 'unknown',
               short: true
             }
           ],
@@ -135,6 +135,11 @@ function dockerWebhook(req, res) {
       'icon_url': req.query['icon_url'] || DEFAULTS['icon_url'],
       attachments: [
         {
+          author_name: req.query.author_name,
+          author_link: req.query.author_link,
+          author_icon: req.query.author_icon,
+          image_url: req.query.image_url,
+          thumb_url: req.query.thumb_url,
           fallback: req.query.fallback || DEFAULTS.attachments[0].fallback,
           pretext: pretext,
           title: req.query.title || req.body.repository['repo_name'],
@@ -143,7 +148,11 @@ function dockerWebhook(req, res) {
           color: req.query.color || DEFAULTS.color,
           fields: [
             DEFAULTS.attachments[0].fields[0],
-            DEFAULTS.attachments[0].fields[1]
+            {
+              title: DEFAULTS.attachments[0].fields[1].title,
+              value: tags,
+              short: DEFAULTS.attachments[0].fields[1].short
+            }
           ],
           'mrkdwn_in': mrkdwn_in  || DEFAULTS.attachments[0]['mrkdwn_in']
         }
