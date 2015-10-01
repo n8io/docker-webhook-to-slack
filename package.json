@@ -1,0 +1,20 @@
+{
+  "name": "docker-webhook",
+  "version": "1.0.0",
+  "description": "A docker webhook handler that posts to a slack channel.",
+  "main": "src/server/app.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:NateClark/docker-webhook-to-slack.git"
+  },
+  "keywords": [
+    "docker",
+    "webhook",
+    "slack"
+  ],
+  "author": "Nate Clark <nate.clark@ignitionone.com>",
+  "license": "MIT"
+}
