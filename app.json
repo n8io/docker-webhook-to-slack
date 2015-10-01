@@ -1,0 +1,5 @@
+{
+  "name": "docker-webhook-to-slack",
+  "image": "heroku/nodejs",
+  "addons": []
+}

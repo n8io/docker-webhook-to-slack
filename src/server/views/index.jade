@@ -1,0 +1,75 @@
+doctype html
+html(lang='en')
+  head
+    title Docker Webhook to Slack
+    link(rel='shortcut icon', href='http://www.docker.com/favicon.ico')
+    style.
+      .highlight { background-color: cyan; }
+      .code { margin-left: 20px; }
+      h2 { color: #222; }
+      h3 { color: #555; margin-left: 10px; }
+      .underline { text-decoration: underline; }
+      img.responsive { max-width: 100%; width: 500px; box-shadow: 0 0 5px #ddd; border: 1px solid #ccc; }
+      .mgn-left-10 { margin-left: 10px; }
+  body
+    h1.underline Docker Webhook to Slack
+
+    p
+      img.responsive(src='https://dl.dropboxusercontent.com/u/452959/hosted/dw2s.png')
+
+    h2 How to implement
+    p
+      h3 Take your Slack incoming webhook url:
+      pre.code
+        span https://
+        span.highlight hooks.slack.com
+        span /services/T0BJTEP2P/B0BKHG10C/UaxHOHYbJxyWtLcjpw620gwY
+    p
+      h3 and replace the base path like so:
+      pre.code
+        span https://
+        span.highlight docker-webhook-to-slack.herokuapp.com
+        span /services/T0BJTEP2P/B0BKHG10C/UaxHOHYbJxyWtLcjpw680gwY
+
+    p
+      h3 You're done.
+
+    h2 What else can I do?
+
+    p
+      h3 Optional query string parameters
+      span.mgn-left-10 Append the following pairs to the url to customize more.
+      span
+        |  These map 1:1 to the&nbsp;
+        a(href='https://api.slack.com/docs/attachments', target='_blank') Slack API
+        | .
+    p
+      ul
+        li
+          span.param &amp;username
+          | =
+          span.value &lt; username &gt;
+        li
+          span.param &amp;icon_url
+          | =
+          span.value &lt; url for username icon &gt;
+        li
+          span.param &amp;pretext
+          | =
+          span.value &lt; pretext &gt;
+        li
+          span.param &amp;title
+          | =
+          span.value &lt; title &gt;
+        li
+          span.param &amp;title_url
+          | =
+          span.value &lt; title_url &gt;
+        li
+          span.param &amp;text
+          | =
+          span.value &lt; text &gt;
+        li
+          span.param &amp;tag
+          | =
+          span.value &lt; tag &gt;
