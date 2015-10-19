@@ -21,6 +21,7 @@
 ### Optional query string parameters
 
 Append the following query string pairs to the url to customize more. These map 1:1 to the [Slack API](https://api.slack.com/docs/attachments).
+
 * &icon_url=[ url for bot icon ]
 * &username=[ username ]
 * &pretext=[ pretext ]
